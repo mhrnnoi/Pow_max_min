@@ -6,13 +6,33 @@ namespace Pow_max_min
     {
         static void Main(string[] args)
         {
-            Console.WriteLine((Min(new double[] { -5050, -10, 0, 50, 100 })));
+            Console.WriteLine("Enter two num to power it");
 
-            Console.WriteLine((Max(new double[] { -9999999, 0, 50, 800 })));
+            Console.WriteLine("first num : ");
+            var firstNum = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine(MinMax(new double[] { -9999999, 0, 50, 800 }));
+            Console.WriteLine("second num : ");
+            var secondNum = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine((Pow(3)));
+            var power = Pow(firstNum, secondNum);
+
+            Console.WriteLine($"{firstNum} power {secondNum} : {power}");
+
+            Console.ReadLine();
+            Console.Clear();
+
+            var arr = new double[5];
+
+            Console.WriteLine("Enter 5 num to find min and max ");
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.WriteLine($"number {i+1}: ");
+                arr[i] = Convert.ToDouble(Console.ReadLine());
+            }
+
+            Console.WriteLine(MinMax(arr));
+
 
         }
 
