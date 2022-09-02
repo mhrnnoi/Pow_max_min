@@ -7,16 +7,26 @@ namespace Pow_max_min
         static void Main(string[] args)
         {
             Console.WriteLine("Enter two num to power it");
+            try
+            {
+                Console.WriteLine("first num : ");
+                var firstNum = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine("first num : ");
-            var firstNum = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("second num : ");
+                var secondNum = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine("second num : ");
-            var secondNum = Convert.ToDouble(Console.ReadLine());
+                var power = Pow(firstNum, secondNum);
 
-            var power = Pow(firstNum, secondNum);
+                Console.WriteLine($"{firstNum} power {secondNum} : {power}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Something went wrong!!");
+                Console.WriteLine(ex.Message);
+            }
 
-            Console.WriteLine($"{firstNum} power {secondNum} : {power}");
+
+
 
             Console.ReadLine();
             Console.Clear();
@@ -24,14 +34,23 @@ namespace Pow_max_min
             var arr = new double[5];
 
             Console.WriteLine("Enter 5 num to find min and max ");
-
-            for (int i = 0; i < arr.Length; i++)
+            try
             {
-                Console.WriteLine($"number {i+1}: ");
-                arr[i] = Convert.ToDouble(Console.ReadLine());
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    Console.WriteLine($"number {i + 1}: ");
+                    arr[i] = Convert.ToDouble(Console.ReadLine());
+                }
+
+                Console.WriteLine(MinMax(arr));
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Something went wrong!!");
+                Console.WriteLine(ex.Message);
             }
 
-            Console.WriteLine(MinMax(arr));
 
 
         }
